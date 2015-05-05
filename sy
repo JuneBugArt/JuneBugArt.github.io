@@ -1,0 +1,163 @@
+[33mcommit 15de80768957606d80a7367e915f466c7416f162[m
+Author: Brandon Ayers <brandona@ucr.edu>
+Date:   Mon May 4 22:32:04 2015 -0700
+
+    Initial Commit
+
+[1mdiff --git a/bower.json b/bower.json[m
+[1mnew file mode 100644[m
+[1mindex 0000000..db9b3a2[m
+[1m--- /dev/null[m
+[1m+++ b/bower.json[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32m{[m
+[32m+[m[32m  "name": "JuneBug",[m
+[32m+[m[32m  "dependencies": {[m
+[32m+[m[32m    "foundation": "~5.5.2"[m
+[32m+[m[32m  }[m
+[32m+[m[32m}[m
+[1mdiff --git a/bower_components/fastclick/.bower.json b/bower_components/fastclick/.bower.json[m
+[1mnew file mode 100644[m
+[1mindex 0000000..db37d8c[m
+[1m--- /dev/null[m
+[1m+++ b/bower_components/fastclick/.bower.json[m
+[36m@@ -0,0 +1,23 @@[m
+[32m+[m[32m{[m
+[32m+[m[32m  "name": "fastclick",[m
+[32m+[m[32m  "main": "lib/fastclick.js",[m
+[32m+[m[32m  "ignore": [[m
+[32m+[m[32m    "**/.*",[m
+[32m+[m[32m    "component.json",[m
+[32m+[m[32m    "package.json",[m
+[32m+[m[32m    "Makefile",[m
+[32m+[m[32m    "tests",[m
+[32m+[m[32m    "examples"[m
+[32m+[m[32m  ],[m
+[32m+[m[32m  "homepage": "https://github.com/ftlabs/fastclick",[m
+[32m+[m[32m  "version": "1.0.6",[m
+[32m+[m[32m  "_release": "1.0.6",[m
+[32m+[m[32m  "_resolution": {[m
+[32m+[m[32m    "type": "version",[m
+[32m+[m[32m    "tag": "v1.0.6",[m
+[32m+[m[32m    "commit": "2ac7258407619398005ca720596f0d36ce66a6c8"[m
+[32m+[m[32m  },[m
+[32m+[m[32m  "_source": "git://github.com/ftlabs/fastclick.git",[m
+[32m+[m[32m  "_target": ">=0.6.11",[m
+[32m+[m[32m  "_originalSource": "fastclick"[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/bower_components/fastclick/LICENSE b/bower_components/fastclick/LICENSE[m
+[1mnew file mode 100644[m
+[1mindex 0000000..459a20d[m
+[1m--- /dev/null[m
+[1m+++ b/bower_components/fastclick/LICENSE[m
+[36m@@ -0,0 +1,22 @@[m
+[32m+[m[32mCopyright (c) 2014 The Financial Times Ltd.[m
+[32m+[m
+[32m+[m[32mPermission is hereby granted, free of charge, to any person[m
+[32m+[m[32mobtaining a copy of this software and associated documentation[m
+[32m+[m[32mfiles (the "Software"), to deal in the Software without[m
+[32m+[m[32mrestriction, including without limitation the rights to use,[m
+[32m+[m[32mcopy, modify, merge, publish, distribute, sublicense, and/or sell[m
+[32m+[m[32mcopies of the Software, and to permit persons to whom the[m
+[32m+[m[32mSoftware is furnished to do so, subject to the following[m
+[32m+[m[32mconditions:[m
+[32m+[m
+[32m+[m[32mThe above copyright notice and this permission notice shall be[m
+[32m+[m[32mincluded in all copies or substantial portions of the Software.[m
+[32m+[m
+[32m+[m[32mTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,[m
+[32m+[m[32mEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES[m
+[32m+[m[32mOF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND[m
+[32m+[m[32mNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT[m
+[32m+[m[32mHOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,[m
+[32m+[m[32mWHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING[m
+[32m+[m[32mFROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR[m
+[32m+[m[32mOTHER DEALINGS IN THE SOFTWARE.[m
+[1mdiff --git a/bower_components/fastclick/README.md b/bower_components/fastclick/README.md[m
+[1mnew file mode 100644[m
+[1mindex 0000000..074895d[m
+[1m--- /dev/null[m
+[1m+++ b/bower_components/fastclick/README.md[m
+[36m@@ -0,0 +1,140 @@[m
+[32m+[m[32m# FastClick #[m
+[32m+[m
+[32m+[m[32mFastClick is a simple, easy-to-use library for eliminating the 300ms delay between a physical tap and the firing of a `click` event on mobile browsers. The aim is to make your application feel less laggy and more responsive while avoiding any interference with your current logic.[m
+[32m+[m
+[32m+[m[32mFastClick is developed by [FT Labs](http://labs.ft.com/), part of the Financial Times.[m
+[32m+[m
+[32m+[m[32m[Explication en français](http://maxime.sh/2013/02/supprimer-le-lag-des-clics-sur-mobile-avec-fastclick/).[m
+[32m+[m
+[32m+[m[32m[日本語で説明](https://developer.mozilla.org/ja/docs/Mozilla/Firefox_OS/Apps/Tips_and_techniques#Make_events_immediate)。[m
+[32m+[m
+[32m+[m[32m## Why does the delay exist? ##[m
+[32m+[m
+[32m+[m[32mAccording to [Google](https://developers.google.com/mobile/articles/fast_buttons):[m
+[32m+[m
+[32m+[m[32m> ...mobile browsers will wait approximately 300ms from the time that you tap the button to fire the click event. The reason for this is that the browser is waiting to see if you are actually performing a double tap.[m
+[32m+[m
+[32m+[m[32m## Compatibility ##[m
+[32m+[m
+[32m+[m[32mThe library has been deployed as part of the [FT Web App](http://app.ft.com/) and is tried and tested on the following mobile browsers:[m
+[32m+[m
+[32m+[m[32m* Mobile Safari on iOS 3 and upwards[m
+[32m+[m[32m* Chrome on iOS 5 and upwards[m
+[32m+[m[32m* Chrome on Android (ICS)[m
+[32m+[m[32m* Opera Mobile 11.5 and upwards[m
+[32m+[m[32m* Android Browser since Android 2[m
+[32m+[m[32m* PlayBook OS 1 and upwards[m
+[32m+[m
+[32m+[m[32m## When it isn't needed ##[m
+[32m+[m
+[32m+[m[32mFastClick doesn't attach any listeners on desktop browsers.[m
+[32m+[m
+[32m+[m[32mChrome 32+ on Android with `width=device-width` in the [viewport meta tag](https://developer.mozilla.org/en-US/docs/Mobile/Viewport_meta_tag) doesn't have a 300ms delay, therefore listeners aren't attached.[m
+[32m+[m
+[32m+[m[32m```html[m
+[32m+[m[32m<meta name="viewport" content="width=device-width, initial-scale=1">[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32mSame goes for Chrome on Android (all versions) with `user-scalable=no` in the viewport meta tag. But be aware that `user-scalable=no` also disables pinch zooming, which may be an accessibility concern.[m
+[32m+[m
+[32m+[m[32mFor IE11+, you can use `touch-action: manipulation;` to disable double-tap-to-zoom on certain elements (like links and buttons).  For IE10 use `-ms-touch-action: manipulation`.[m
+[32m+[m
+[32m+[m[32m## Usage ##[m
+[32m+[m
+[32m+[m[32mInclude fastclick.js in your JavaScript bundle or add it to your HTML page like this:[m
+[32m+[m
+[32m+[m[32m```html[m
+[32m+[m[32m<script type='application/javascript' src='/path/to/fastclick.js'></script>[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32mThe script must be loaded prior to instantiating FastClick on any element of the page.[m
+[32m+[m
+[32m+[m[32mTo instantiate FastClick on the `body`, which is the recommended method of use:[m
+[32m+[m
+[32m+[m[32m```js[m
+[32m+[m[32mif ('addEventListener' in document) {[m
+[32m+[m	[32mdocument.addEventListener('DOMContentLoaded', function() {[m
+[32m+[m		[32mFastClick.attach(document.body);[m
+[32m+[m	[32m}, false);[m
+[32m+[m[32m}[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32mOr, if you're using jQuery:[m
+[32m+[m
+[32m+[m[32m```js[m
+[32m+[m[32m$(function() {[m
+[32m+[m	[32mFastClick.attach(document.body);[m
+[32m+[m[32m});[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32mIf you're using Browserify or another CommonJS-style module system, the `FastClick.attach` function will be returned when you call `require('fastclick')`. As a result, the easiest way to use FastClick with these loaders is as follows:[m
+[32m+[m
+[32m+[m[32m```js[m
+[32m+[m[32mvar attachFastClick = require('fastclick');[m
+[32m+[m[32mattachFastClick(document.body);[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m### Minified ###[m
+[32m+[m
+[32m+[m[32mRun `make` to build a minified version of FastClick using the Closure Compiler REST API. The minified file is saved to `build/fastclick.min.js` or you can [download a pre-minified version](http://build.origami.ft.com/bundles/js?modules=fastclick).[m
+[32m+[m
+[32m+[m[32mNote: the pre-minified version is built using [our build service](http://origami.ft.com/docs/developer-guide/build-service/) which exposes the `FastClick` object through `Origami.f

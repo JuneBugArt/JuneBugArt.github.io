@@ -10,35 +10,46 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     cache = require('gulp-cache'),
     livereload = require('gulp-livereload'),
-    del = require('del');
+    del = require('del'),
+    watch = require('gulp-watch');
 
-gulp.task('foundation', function() {
-  gulp.src('bower_components/foundation/scss/*.scss')
-    .pipe(sass({
-      includePaths: ['bower_components/foundation/scss']
-    }))
-    .pipe(gulp.dest('./css'));
-});
-
-gulp.task('sass', function() {
-  gulp.src('./scss/*.scss')
+gulp.task('styles', function() {
+  gulp.src([
+     'bower_components/foundation/scss/*.scss',
+     './src/scss/*.scss',
+     './src/css/*.css'
+     ])
     .pipe(sass())
-    .pipe(gulp.dest('./css'));
+    .pipe(concat('app.css'))
+    .pipe(gulp.dest('./assets/css/'));
 });
+
+//gulp.task('styles', function() {
+//  gulp.src('./src/scss/*.scss')
+//    .pipe(sass())
+//    .pipe(gulp.dest('./assets/css/'));
+//});
 
 gulp.task('scripts', function() {
   gulp.src([
+    './bower_components/foundation/js/foundation.js',
     './bower_components/foundation/js/foundation/foundation.clearing.js',
     './bower_components/foundation/js/vendor/fastclick.js',
     './bower_components/foundation/js/vendor/jquery.cookie.js',
-    './bower_components/foundation/js/vendor/modernizr.js'
+    './bower_components/foundation/js/vendor/modernizr.js',
+    './src/js/**.js'
     ])
     //.pipe(jshint('.jshintrc'))
     //.pipe(jshint.reporter('default'))
-    .pipe(concat('main.js'))
-    .pipe(gulp.dest('./js/'))
+    .pipe(concat('app.js'))
+    .pipe(gulp.dest('./assets/js/'))
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
-    .pipe(gulp.dest('./js'))
-    .pipe(notify({ message: 'Scripts task complete' }));
+    .pipe(gulp.dest('./assets/js/'));
+});
+
+gulp.task('watch', function () {
+  var assets = ['scripts', 'styles'];
+  gulp.watch('./src/**', assets);
+  gulp.watch('./bower_components/foundation/scss/*.scss', assets);
 });
