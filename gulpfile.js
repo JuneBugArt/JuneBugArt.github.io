@@ -11,11 +11,13 @@ var gulp = require('gulp'),
     cache = require('gulp-cache'),
     livereload = require('gulp-livereload'),
     del = require('del'),
-    watch = require('gulp-watch');
+    watch = require('gulp-watch'),
+    fileinclude = require('gulp-file-include');
 
 gulp.task('styles', function() {
   gulp.src([
-     'bower_components/foundation/scss/*.scss',
+     'bower_components/foundation/scss/normalize.scss',
+     'bower_components/foundation/scss/foundation.scss',
      './src/scss/*.scss',
      './src/css/*.css'
      ])
@@ -48,8 +50,22 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('./assets/js/'));
 });
 
+gulp.task('fileinclude', function() {
+  gulp.src([
+     './pages/*.html'
+     ])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest('./'));
+});
+
 gulp.task('watch', function () {
   var assets = ['scripts', 'styles'];
+  var html = ['fileinclude'];
   gulp.watch('./src/**', assets);
   gulp.watch('./bower_components/foundation/scss/*.scss', assets);
+  gulp.watch('./pages/*.html', html);
+  gulp.watch('./templates/*.html', html);
 });
