@@ -12,7 +12,8 @@ var gulp = require('gulp'),
     livereload = require('gulp-livereload'),
     del = require('del'),
     watch = require('gulp-watch'),
-    fileinclude = require('gulp-file-include');
+    fileinclude = require('gulp-file-include'),
+    batch = require('gulp-batch');
 
 gulp.task('styles', function() {
   gulp.src([
@@ -61,11 +62,28 @@ gulp.task('fileinclude', function() {
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('watch', function () {
+/*gulp.task('watch', function () {
   var assets = ['scripts', 'styles'];
   var html = ['fileinclude'];
   gulp.watch('./src/**', assets);
   gulp.watch('./bower_components/foundation/scss/*.scss', assets);
   gulp.watch('./pages/*.html', html);
   gulp.watch('./templates/*.html', html);
+});*/
+
+gulp.task('watch', function () {
+   var assets = ['scripts', 'styles'];
+   var html = ['fileinclude'];
+    watch('./src/**', function () {
+        gulp.start(assets);
+    });
+    watch('./bower_components/foundation/scss/*.scss', function () {
+        gulp.start(assets);
+    });
+    watch('./pages/*.html', function () {
+        gulp.start(html);
+    });
+    watch('./templates/*.html', function () {
+        gulp.start(html);
+    });
 });
