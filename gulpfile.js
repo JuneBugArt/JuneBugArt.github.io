@@ -19,8 +19,8 @@ gulp.task('styles', function() {
   gulp.src([
      'bower_components/foundation/scss/normalize.scss',
      'bower_components/foundation/scss/foundation.scss',
-     './src/scss/*.scss',
-     './src/css/*.css'
+     './src/scss/**/*.scss',
+     './src/css/**/*.css'
      ])
     .pipe(sass())
     .pipe(concat('app.css'))
@@ -36,7 +36,10 @@ gulp.task('styles', function() {
 gulp.task('scripts', function() {
   gulp.src([
     './bower_components/foundation/js/foundation.js',
+    './bower_components/foundation/js/foundation.topbar.js',
     './bower_components/foundation/js/foundation/foundation.clearing.js',
+    './bower_components/foundation/js/foundation/foundation.placeholder.js',
+    //'./src/js/jquery.foundation.navigation.js',
     './bower_components/foundation/js/vendor/fastclick.js',
     './bower_components/foundation/js/vendor/jquery.cookie.js',
     './bower_components/foundation/js/vendor/modernizr.js',
@@ -74,7 +77,13 @@ gulp.task('fileinclude', function() {
 gulp.task('watch', function () {
    var assets = ['scripts', 'styles'];
    var html = ['fileinclude'];
-    watch('./src/**', function () {
+    watch('./src/scss/*.scss', function () {
+        gulp.start(assets);
+    });
+    watch('./src/css/*.css', function () {
+        gulp.start(assets);
+    });
+    watch('./src/js/*.js', function () {
         gulp.start(assets);
     });
     watch('./bower_components/foundation/scss/*.scss', function () {
