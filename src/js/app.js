@@ -17,7 +17,7 @@
   // $.fn.foundationNavigation       ? $doc.foundationNavigation() : null;
 
 
-  $.fn.foundationTopBar           ? $doc.foundationTopBar({breakPoint: 940}) : null;
+  //$.fn.foundationTopBar           ? $doc.foundationTopBar({breakPoint: 940}) : null;
 
 
   // $.fn.foundationMediaQueryViewer ? $doc.foundationMediaQueryViewer() : null;
@@ -38,15 +38,15 @@
 
   // Hide address bar on mobile devices
   if (Modernizr.touch) {
-    $(window).load(function () {
-      setTimeout(function () {
-        window.scrollTo(0, 1);
-      }, 0);
-    });
+   //  $(window).load(function () {
+   //    setTimeout(function () {
+   //      window.scrollTo(0, 1);
+   //    }, 0);
+   //  });
   }
 
   $(document).ready(function() {
-     alert("test");
+     $(document).foundation();
   });
 
 })(jQuery, this);

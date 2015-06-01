@@ -7021,7 +7021,7 @@ window.Modernizr=function(a,b,c){function d(a){t.cssText=a}function e(a,b){retur
   // $.fn.foundationNavigation       ? $doc.foundationNavigation() : null;
 
 
-  $.fn.foundationTopBar           ? $doc.foundationTopBar({breakPoint: 940}) : null;
+  //$.fn.foundationTopBar           ? $doc.foundationTopBar({breakPoint: 940}) : null;
 
 
   // $.fn.foundationMediaQueryViewer ? $doc.foundationMediaQueryViewer() : null;
@@ -7042,15 +7042,15 @@ window.Modernizr=function(a,b,c){function d(a){t.cssText=a}function e(a,b){retur
 
   // Hide address bar on mobile devices
   if (Modernizr.touch) {
-    $(window).load(function () {
-      setTimeout(function () {
-        window.scrollTo(0, 1);
-      }, 0);
-    });
+   //  $(window).load(function () {
+   //    setTimeout(function () {
+   //      window.scrollTo(0, 1);
+   //    }, 0);
+   //  });
   }
 
   $(document).ready(function() {
-     alert("test");
+     $(document).foundation();
   });
 
 })(jQuery, this);

@@ -39,7 +39,6 @@ gulp.task('scripts', function() {
     './bower_components/foundation/js/foundation.topbar.js',
     './bower_components/foundation/js/foundation/foundation.clearing.js',
     './bower_components/foundation/js/foundation/foundation.placeholder.js',
-    //'./src/js/jquery.foundation.navigation.js',
     './bower_components/foundation/js/vendor/fastclick.js',
     './bower_components/foundation/js/vendor/jquery.cookie.js',
     './bower_components/foundation/js/vendor/modernizr.js',

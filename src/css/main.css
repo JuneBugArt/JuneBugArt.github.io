@@ -8,12 +8,12 @@
 
 @font-face {
     font-family: 'LigatureSymbols';
-    src: url('assets/fonts/LigatureSymbols-2.05.eot');
-    src: url('assets/fonts/LigatureSymbols-2.05.eot?#iefix') format('embedded-opentype'),
-         url('assets/fonts/LigatureSymbols-2.05.woff') format('woff'),
-         url('assets/fonts/LigatureSymbols-2.05.ttf') format('truetype'),
-         url('assets/fonts/LigatureSymbols-2.05.svg#LigatureSymbols') format('svg');
-    src: url('assets/fonts/LigatureSymbols-2.05.ttf') format('truetype');
+    src: url('/assets/fonts/LigatureSymbols-2.07.eot');
+    src: url('/assets/fonts/LigatureSymbols-2.07.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/LigatureSymbols-2.07.woff') format('woff'),
+         url('/assets/fonts/LigatureSymbols-2.07.ttf') format('truetype'),
+         url('/assets/fonts/LigatureSymbols-2.07.svg#LigatureSymbols') format('svg');
+    src: url('/assets/fonts/LigatureSymbols-2.07.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -66,8 +66,6 @@
 }
 
 body {background: #fafafa}
-
-.row {width: 960px}
 
 hr {
     -moz-border-bottom-colors: none;

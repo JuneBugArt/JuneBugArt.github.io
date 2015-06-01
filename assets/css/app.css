@@ -6099,17 +6099,20 @@ th.hide-for-touch {
   .show-for-print {
     display: none !important; } }
 
-.nav-bar li .button {
-  transition: all 0.2s ease; }
-  .nav-bar li .button:focus {
-    background-color: transparent;
-    color: inherit; }
-  .nav-bar li .button:hover {
-    border-bottom: #6492b8 solid 1px;
-    color: rgba(0, 0, 0, 0.65); }
-.nav-bar li.selected .button {
-  border-bottom: #6492b8 solid 1px;
-  color: rgba(0, 0, 0, 0.65); }
+.top-bar-section ul {
+  display: table;
+  margin: 0 auto; }
+
+.top-bar-section ul li {
+  display: table-cell;
+  min-width: 8rem;
+  text-align: center; }
+
+footer .lsf-icon::before {
+  font-size: inherit; }
+
+.clearing-thumbs li a img {
+  width: 132px; }
 
 /* Css Theme by CssTemplateHeaven - www.csstemplateheaven.com */
 /**************************************************************************************/
@@ -6118,9 +6121,9 @@ th.hide-for-touch {
 /* CSS */
 @font-face {
   font-family: 'LigatureSymbols';
-  src: url('assets/fonts/LigatureSymbols-2.05.eot');
-  src: url('assets/fonts/LigatureSymbols-2.05.eot?#iefix') format('embedded-opentype'), url('assets/fonts/LigatureSymbols-2.05.woff') format('woff'), url('assets/fonts/LigatureSymbols-2.05.ttf') format('truetype'), url('assets/fonts/LigatureSymbols-2.05.svg#LigatureSymbols') format('svg');
-  src: url('assets/fonts/LigatureSymbols-2.05.ttf') format('truetype');
+  src: url('/assets/fonts/LigatureSymbols-2.07.eot');
+  src: url('/assets/fonts/LigatureSymbols-2.07.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/LigatureSymbols-2.07.woff') format('woff'), url('/assets/fonts/LigatureSymbols-2.07.ttf') format('truetype'), url('/assets/fonts/LigatureSymbols-2.07.svg#LigatureSymbols') format('svg');
+  src: url('/assets/fonts/LigatureSymbols-2.07.ttf') format('truetype');
   font-weight: normal;
   font-style: normal; }
 
@@ -6170,9 +6173,6 @@ th.hide-for-touch {
 
 body {
   background: #fafafa; }
-
-.row {
-  width: 960px; }
 
 hr {
   -moz-border-bottom-colors: none;
