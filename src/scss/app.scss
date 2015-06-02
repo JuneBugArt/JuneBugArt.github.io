@@ -1,14 +1,60 @@
-.top-bar-section ul {display: table; margin: 0 auto;}
+.top-bar-section ul {
+   display: table;
+   margin: 0 auto;
+}
 .top-bar-section ul li {
    display: table-cell;
    min-width: 8rem;
    text-align: center;
 }
-
 footer .lsf-icon::before {
    font-size: inherit;
 }
-
 .clearing-thumbs li a img {
    width: 132px;
+}
+.section_light {
+   h3 {
+      color: #999;
+      & > i.fa {
+         margin-right: 0.75rem;
+      }
+   }
+}
+header {
+   clear: both;
+   padding: 20px 0 40px;
+   background-image: url("../images/header_bg.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   h1.heading_supersize {
+      text-align: center;
+      font-weight: normal;
+      line-height: 150px;
+      margin: 0 0 10px;
+      color: rgb(241, 241, 241);
+      text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0 -5px 35px rgba(255,255,255,0.3);
+      font-size: 80px;
+   }
+   h2.welcome_text {
+      color: rgb(241, 241, 241);
+      text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0 -5px 35px rgba(255,255,255,0.3);
+      font-size: 32px;
+      margin-bottom: 0;
+      text-align: center;
+      font-weight: normal;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-style: italic;
+   }
+}
+footer {
+   a {
+      &:last-of-type {
+         margin-right: 0;
+      }
+      margin-right: 1rem;
+      & > i.fa {
+         margin-right: 0.5rem;
+      }
+   }
 }

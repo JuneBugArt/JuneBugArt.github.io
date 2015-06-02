@@ -6114,18 +6114,58 @@ footer .lsf-icon::before {
 .clearing-thumbs li a img {
   width: 132px; }
 
+.section_light h3 {
+  color: #999; }
+  .section_light h3 > i.fa {
+    margin-right: 0.75rem; }
+
+header {
+  clear: both;
+  padding: 20px 0 40px;
+  background-image: url("../images/header_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; }
+  header h1.heading_supersize {
+    text-align: center;
+    font-weight: normal;
+    line-height: 150px;
+    margin: 0 0 10px;
+    color: #f1f1f1;
+    text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0 -5px 35px rgba(255, 255, 255, 0.3);
+    font-size: 80px; }
+  header h2.welcome_text {
+    color: #f1f1f1;
+    text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0 -5px 35px rgba(255, 255, 255, 0.3);
+    font-size: 32px;
+    margin-bottom: 0;
+    text-align: center;
+    font-weight: normal;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-style: italic; }
+
+footer a {
+  margin-right: 1rem; }
+  footer a:last-of-type {
+    margin-right: 0; }
+  footer a > i.fa {
+    margin-right: 0.5rem; }
+
 /* Css Theme by CssTemplateHeaven - www.csstemplateheaven.com */
 /**************************************************************************************/
 /*----------------------------------- LigaTure Symbols ------------------------------*/
 /************************************************************************************/
 /* CSS */
-@font-face {
-  font-family: 'LigatureSymbols';
-  src: url('/assets/fonts/LigatureSymbols-2.07.eot');
-  src: url('/assets/fonts/LigatureSymbols-2.07.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/LigatureSymbols-2.07.woff') format('woff'), url('/assets/fonts/LigatureSymbols-2.07.ttf') format('truetype'), url('/assets/fonts/LigatureSymbols-2.07.svg#LigatureSymbols') format('svg');
-  src: url('/assets/fonts/LigatureSymbols-2.07.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal; }
+/*@font-face {
+    font-family: 'LigatureSymbols';
+    src: url('/assets/fonts/LigatureSymbols-2.07.eot');
+    src: url('/assets/fonts/LigatureSymbols-2.07.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/LigatureSymbols-2.07.woff') format('woff'),
+         url('/assets/fonts/LigatureSymbols-2.07.ttf') format('truetype'),
+         url('/assets/fonts/LigatureSymbols-2.07.svg#LigatureSymbols') format('svg');
+    src: url('/assets/fonts/LigatureSymbols-2.07.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 .lsf {
   font-family: 'LigatureSymbols';
@@ -6138,12 +6178,13 @@ footer .lsf-icon::before {
   -moz-font-smoothing: antialiased;
   -ms-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
-  font-smoothing: antialiased; }
+  font-smoothing: antialiased;
+}
 
 .lsf-icon:before {
-  content: attr(title);
-  margin-right: 0.3em;
-  font-size: 64px;
+  content:attr(title);
+  margin-right:0.3em;
+  font-size:64px;
   font-family: 'LigatureSymbols';
   -webkit-text-rendering: optimizeLegibility;
   -moz-text-rendering: optimizeLegibility;
@@ -6154,11 +6195,12 @@ footer .lsf-icon::before {
   -moz-font-smoothing: antialiased;
   -ms-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
-  font-smoothing: antialiased; }
+  font-smoothing: antialiased;
+}
 
 .lsf-icon-dropcap:before {
-  content: attr(title);
-  font-size: 64px;
+  content:attr(title);
+  font-size:64px;
   font-family: 'LigatureSymbols';
   -webkit-text-rendering: optimizeLegibility;
   -moz-text-rendering: optimizeLegibility;
@@ -6169,8 +6211,8 @@ footer .lsf-icon::before {
   -moz-font-smoothing: antialiased;
   -ms-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
-  font-smoothing: antialiased; }
-
+  font-smoothing: antialiased;
+}*/
 body {
   background: #fafafa; }
 
@@ -6190,11 +6232,7 @@ hr {
 .page_wrap {
   margin: 0 auto 25px; }
 
-header {
-  background: #f3f3f3;
-  clear: both;
-  padding: 20px 0 40px; }
-
+/*header {background: #f3f3f3; clear:both; padding: 20px 0 40px}*/
 .header_nav {
   background: #fafafa;
   padding: 15px 0 0;
@@ -6235,14 +6273,7 @@ header {
 p {
   color: #333; }
 
-.welcome_text {
-  font-size: 32px;
-  margin-bottom: 0;
-  text-align: center;
-  font-weight: normal;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-style: italic; }
-
+/*.welcome_text {font-size: 32px; margin-bottom: 0; text-align:center; font-weight: normal; font-family:Georgia, "Times New Roman", Times, serif; font-style:italic}*/
 .excerpt {
   font-size: 24px;
   margin-bottom: 0;
@@ -6289,14 +6320,7 @@ h1, h2, h3, h4 {
   padding: 0 0 20px; }
 
 /* END Frontpage sections */
-.heading_supersize {
-  font-size: 128px;
-  text-align: center;
-  font-weight: normal;
-  line-height: 150px;
-  margin: 0 0 10px;
-  color: #212121; }
-
+/*.heading_supersize {font-size: 128px; text-align:center; font-weight: normal; line-height: 150px; margin:0 0 10px; color: #212121}*/
 .heading_largesize {
   font-size: 34px;
   font-weight: normal; }
